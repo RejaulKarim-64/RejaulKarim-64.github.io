@@ -6,6 +6,13 @@
   <title>Reja | Portfolio</title>
 
   <style>
+    :root {
+      --primary: #4f46e5;
+      --dark: #111827;
+      --light: #f9fafb;
+      --gray: #6b7280;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -13,51 +20,85 @@
       font-family: Arial, sans-serif;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      line-height: 1.6;
-      background: #f4f4f4;
-      color: #333;
+      background: var(--light);
+      color: var(--dark);
     }
 
     header {
-      background: #333;
+      background: var(--dark);
       color: #fff;
-      padding: 1rem 0;
       text-align: center;
-    }
-
-    nav {
-      margin-top: 10px;
+      padding: 20px;
     }
 
     nav a {
       color: #fff;
-      margin: 0 15px;
+      margin: 0 10px;
       text-decoration: none;
-      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--primary);
     }
 
     section {
-      padding: 40px 20px;
       max-width: 1000px;
       margin: auto;
+      padding: 50px 20px;
     }
 
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* HERO */
     .hero {
       text-align: center;
-      padding: 60px 20px;
     }
 
     .hero h1 {
       font-size: 2.5rem;
     }
 
-    .hero p {
-      margin-top: 10px;
-      font-size: 1.2rem;
-      color: #666;
+    .hero span {
+      color: var(--primary);
     }
 
+    .hero p {
+      color: var(--gray);
+      margin-top: 10px;
+    }
+
+    /* SKILLS */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .skill {
+      background: var(--primary);
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .skill:hover {
+      background: #4338ca;
+      transform: scale(1.05);
+    }
+
+    /* PROJECTS */
     .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -68,88 +109,106 @@
       background: #fff;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      transition: 0.3s;
     }
 
-    .card h3 {
-      margin-bottom: 10px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #333;
-      color: #fff;
+    .card:hover {
+      transform: translateY(-5px);
     }
 
     .btn {
       display: inline-block;
       margin-top: 10px;
-      padding: 10px 15px;
-      background: #333;
+      padding: 8px 12px;
+      background: var(--primary);
       color: #fff;
       text-decoration: none;
       border-radius: 5px;
     }
 
     .btn:hover {
-      background: #555;
+      background: #4338ca;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: var(--dark);
+      color: #fff;
     }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <h1>Reja</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<header>
+  <h1>Reja</h1>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <section class="hero">
-    <h1>Hello, I'm Reja 👋</h1>
-    <p>Web Developer | Designer | Freelancer</p>
-  </section>
+<section class="hero">
+  <h1>Hello, I'm <span>Reja</span> 👋</h1>
+  <p>Full Stack Developer | React JS | Spring Boot | Flutter</p>
+</section>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      Passionate developer building modern web and mobile applications. 
-      Specialized in Spring Boot, Angular, Flutter, Android, and MySQL development.
-    </p>
-  </section>
+<section id="about">
+  <h2>About Me</h2>
+  <p style="text-align:center; max-width:700px; margin:auto;">
+    I'm a passionate developer from Bangladesh who builds modern web and mobile applications.
+    I specialize in Spring Boot, Angular, Flutter, and MySQL.
+    I love solving real-world problems and creating clean, user-friendly interfaces.
+  </p>
+</section>
 
-  <section id="projects">
-    <h2>My Projects</h2>
-    <div class="projects">
-      
-      <div class="card">
-        <h3>Ramadan calendar</h3>
-        <p>Simple clock using UTC API for Ramadan timing based on Bangladeshi time zones.</p>
-        <a href="https://reja.iam.bd" class="btn">View Project</a>
-      </div>
+<section id="skills">
+  <h2>Skills</h2>
 
-      <div class="card">
-        <h3>Greetings</h3>
-        <p>EID Greetings Card.</p>
-        <a href="https://greetings26.vercel.app" class="btn">View Project</a>
-      </div>
+  <div class="skills">
+    <span class="skill">React JS</span>
+    <span class="skill">Spring Boot</span>
+    <span class="skill">Angular</span>
+    <span class="skill">Flutter</span>
+    <span class="skill">MySQL</span>
+  </div>
+</section>
 
+<section id="projects">
+  <h2>My Projects</h2>
+
+  <div class="projects">
+
+    <div class="card">
+      <h3>Ramadan Calendar</h3>
+      <p>UTC-based Ramadan timing system for Bangladesh.</p>
+      <a href="https://reja.iam.bd" class="btn">View Project</a>
     </div>
-  </section>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>Web: <a href="http://iamcrk.me" target="_blank">iamcrk.me</a></p>
-    <p>Email: <a href="mailto:iamcrk.dev@gmail.com">iamcrk.dev@gmail.com</a></p>
-  </section>
+    <div class="card">
+      <h3>Eid Greetings</h3>
+      <p>Interactive Eid greeting card web app.</p>
+      <a href="https://greetings26.vercel.app" class="btn">View Project</a>
+    </div>
 
-  <footer>
-    <p>© 2026 Reja. All rights reserved.</p>
-  </footer>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p style="text-align:center;">
+    🌐 <a href="http://iamcrk.me">iamcrk.me</a><br>
+    📧 <a href="mailto:iamcrk.dev@gmail.com">iamcrk.dev@gmail.com</a>
+  </p>
+</section>
+
+<footer>
+  <p>© 2026 Reja. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
